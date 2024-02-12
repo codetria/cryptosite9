@@ -1,0 +1,118 @@
+{% extends './base.html' %}
+{% block title %} Dashboard ({{ current_user.username }} ) {% endblock  %}
+{% block content %}
+    <!-- Header Start -->
+    <!-- <div class="container-fluid hero-header bg-light py-5 mb-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-3 animated slideInDown">Welcome {{ current_user.username }}</h1>
+                    <nav aria-label="breadcrumb animated slideInDown">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="{{ url_for('home', logged_in=current_user.is_authenticated) }}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 animated fadeIn">
+                    <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="img/hero-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <canvas id="time-chart"style="width: 80%; height:50vh;margin:20px;padding:40px;border:1px solid #ccc;"></canvas>
+    <!-- Header End -->
+
+    <div class="crypto-container">
+        <div class="crypto-name">CryptoCoin</div>
+        <div class="crypto-price">${{price}}  <i class="fas fa-chart-line"></i></div>
+    </div>
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+     
+        <div class="container">
+            <input type="hidden"  id="time_id" value="{{ time_data }}">
+            <input type="hidden"  id="price_id" value="{{ price_data }}">
+            <input type="hidden"  id="data" value="{{ data }}">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid" src="/static/img/about.png" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                
+                        <a class="btn btn-primary py-3 px-4" href="">Purchase a Package</a>
+                        {% if current_user.id == 1 %}
+                        <a class="btn btn-primary py-3 px-4" href="{{ url_for('admin_panel', logged_in=current_user.is_authenticated, ll=current_user.id) }}">Admin Panel</a>
+                        {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <script type="module">
+
+        function loadJSON(url, callback) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => callback(null, data))
+                .catch(error => callback(error, null));
+        }
+    
+        // Example usage:
+        const jsonUrl = document.querySelector('#data').value;
+        var package_data;
+        // Replace with the path to your JSON file
+    
+        loadJSON(jsonUrl, (error, data) => {
+            if (error) {
+                console.error('Error loading JSON:', error);
+            } else {
+                package_data = data.package_data
+                
+                // Create a line chart
+
+                
+                const datax = [
+                    ...(package_data)
+                ]
+                var ctx = document.getElementById('time-chart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        
+                        labels: datax.map(row => row.time),
+                        datasets: [{
+                            //label: 'Price',
+                            label: 'Price Over Time',
+                            data: datax.map(row => row.price),
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            tension: 0.2,
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: [{
+                                type: 'time',
+                                time: {
+                                    unit: 'hour'
+                                }
+                            }],
+                            y: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+                // Now you can work with the loaded JSON data
+            }
+        });
+
+       
+    </script>
+{% endblock %}
+

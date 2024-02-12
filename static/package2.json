@@ -1,0 +1,28 @@
+{
+    "package_data": [
+        {
+            "price": 11.0,
+            "time": "19 Jan, 1 AM"
+        },
+        {
+            "price": 9.0,
+            "time": "19 Jan, 6 AM"
+        },
+        {
+            "price": 12.0,
+            "time": "19 Jan, 7 AM"
+        },
+        {
+            "price": 10.0,
+            "time": "19 Jan, 9 AM"
+        },
+        {
+            "price": 14.0,
+            "time": "19 Jan, 10 AM"
+        },
+        {
+            "price": 13.0,
+            "time": "19 Jan, 10 AM"
+        }
+    ]
+}

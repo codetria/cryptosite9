@@ -1,0 +1,76 @@
+{
+    "package_data": [
+        {
+            "price": 5.0,
+            "time": "18 Jan, 10 AM"
+        },
+        {
+            "price": 15.0,
+            "time": "18 Jan, 11 AM"
+        },
+        {
+            "price": 10.0,
+            "time": "18 Jan, 12 PM"
+        },
+        {
+            "price": 7.0,
+            "time": "18 Jan, 1 PM"
+        },
+        {
+            "price": 5.0,
+            "time": "18 Jan, 2 PM"
+        },
+        {
+            "price": 6.0,
+            "time": "18 Jan, 3 PM"
+        },
+        {
+            "price": 8.0,
+            "time": "18 Jan, 4 PM"
+        },
+        {
+            "price": 7.0,
+            "time": "18 Jan, 5 PM"
+        },
+        {
+            "price": 9.0,
+            "time": "18 Jan, 6 PM"
+        },
+        {
+            "price": 12.0,
+            "time": "19 Jan, 12 AM"
+        },
+        {
+            "price": 11.0,
+            "time": "19 Jan, 1 AM"
+        },
+        {
+            "price": 9.0,
+            "time": "19 Jan, 6 AM"
+        },
+        {
+            "price": 12.0,
+            "time": "19 Jan, 7 AM"
+        },
+        {
+            "price": 10.0,
+            "time": "19 Jan, 9 AM"
+        },
+        {
+            "price": 14.0,
+            "time": "19 Jan, 10 AM"
+        },
+        {
+            "price": 13.0,
+            "time": "19 Jan, 10 AM"
+        },
+        {
+            "price": 15.0,
+            "time": "20 Jan, 08 PM"
+        },
+        {
+            "price": 12.0,
+            "time": "20 Jan, 08 PM"
+        }
+    ]
+}
