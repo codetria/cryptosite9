@@ -12,7 +12,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'crptosite'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('GLOBAL_EXCHANGE_DATABASE_URL')
-postgres://globalexchange_user:ZWxif2Sv9R0SnM7VAqY3xmYba5Zso1Ha@dpg-cn5ho2tjm4es73dnka20-a.oregon-postgres.render.com/globalexchange
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
