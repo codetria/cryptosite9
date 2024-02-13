@@ -71,6 +71,14 @@
         {
             "price": 12.0,
             "time": "20 Jan, 08 PM"
+        },
+        {
+            "price": 1500.0,
+            "time": "13 Feb, 08 AM"
+        },
+        {
+            "price": 20.0,
+            "time": "13 Feb, 08 AM"
         }
     ]
 }

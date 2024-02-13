@@ -1,2 +1,4 @@
 READ-ME.txt
-venv\
+venv
+__pycache__
+instance
